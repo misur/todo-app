@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="855e192d-2155-44af-a86a-d29ded7ff944" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1R9Djq5R3ZEEVJmlmZYtErafFho" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
+  </component>
+  <component name="ReplState" timestamp="1569823659588">{:repl-history {:ide [], :local [{:command &quot;( + 20 30)&quot;, :offset 9, :ns &quot;todo-app.core&quot;} {:command &quot;(foo \&quot;milos\&quot;)&quot;, :offset 13, :ns &quot;todo-app.core&quot;} {:command &quot;(def todo-list (atom ()))&quot;, :offset 25, :ns &quot;todo-app.core&quot;} {:command &quot;(defn add-item [description user]\n  (swap! todo-list {description description :user user}))&quot;, :offset 91, :ns &quot;todo-app.core&quot;} {:command &quot;(defn add-item [description user]\n  (reset! todo-list {description description :user user}))&quot;, :offset 92, :ns &quot;todo-app.core&quot;} {:command &quot;(defn add-item [description user]\n  (reset! todo-list #(conj {description description :user user})))&quot;, :offset 100, :ns &quot;todo-app.core&quot;} {:command &quot;(defn add-item [description user]\n  (reset! todo-list #(conj {:description description :user user})))&quot;, :offset 101, :ns &quot;todo-app.core&quot;} {:command &quot;(println @todo-list)&quot;, :offset 20, :ns &quot;todo-app.core&quot;} {:command &quot;(defn add-item [description user]\n  (reset! todo-list #(conj % {:description description :user user})))&quot;, :offset 103, :ns &quot;todo-app.core&quot;} {:command &quot;(defn add-item [description user]\n  (swap! todo-list conj {:description description :name name}))&quot;, :offset 97, :ns &quot;todo-app.core&quot;} {:command &quot;(defn add-item [description user]\n  (swap! todo-list conj {:description description :user user}))&quot;, :offset 97, :ns &quot;todo-app.core&quot;} {:command &quot;(def todo-list (atom '()))&quot;, :offset 26, :ns &quot;todo-app.core&quot;} {:command &quot;(defn find-by-user\n  [user coll]\n  (reduce (fn [result element]\n           (if (= user (:user element))\n             (conj result element)\n             result))\n          (empty coll)\n          coll))&quot;, :offset 200, :ns &quot;todo-app.core&quot;} {:command &quot;(count (find-by-user \&quot;milos\&quot; @todo-list))&quot;, :offset 41, :ns &quot;todo-app.core&quot;} {:command &quot;(defn count-by-user\n  [user coll]\n  (count (find-by-user user coll)))&quot;, :offset 69, :ns &quot;todo-app.core&quot;} {:command &quot;(count-by-user \&quot;milos\&quot;)&quot;, :offset 23, :ns &quot;todo-app.core&quot;} {:command &quot;(count-by-user \&quot;milos\&quot; todo-list)&quot;, :offset 33, :ns &quot;todo-app.core&quot;} {:command &quot;(defn generate-id\n  []\n  (.toString (java.util.UUID/randomUUID)))&quot;, :offset 65, :ns &quot;todo-app.core&quot;} {:command &quot;(defn add-item\n  [description user]\n  (swap! todo-list conj {:id (generate-id) :description description :user user}))&quot;, :offset 117, :ns &quot;todo-app.core&quot;} {:command &quot;(defn generate-id\n  []\n  (.toString (UUID/randomUUID)))&quot;, :offset 55, :ns &quot;todo-app.core&quot;} {:command &quot;(generate-id)&quot;, :offset 13, :ns &quot;todo-app.core&quot;} {:command &quot;(count-by-user \&quot;mira\&quot; @todo-list)&quot;, :offset 33, :ns &quot;todo-app.core&quot;} {:command &quot;(defn remove-item\n  [description user]\n  (swap! todo-list remove {:description description :user user}))&quot;, :offset 104, :ns &quot;todo-app.core&quot;} {:command &quot;(remove-item \&quot;make lunch\&quot; \&quot;mira\&quot;)&quot;, :offset 33, :ns &quot;todo-app.core&quot;} {:command &quot;(remove #(= (:user %) \&quot;milos\&quot;) @todo-list)&quot;, :offset 42, :ns &quot;todo-app.core&quot;} {:command &quot;(defn remove-item\n  [description user]\n  (swap! todo-list (remove #(= (:user %) user))))&quot;, :offset 88, :ns &quot;todo-app.core&quot;} {:command &quot;(defn remove-item\n  [description user]\n  (reset todo-list remove #(= (:user %) user)))&quot;, :offset 86, :ns &quot;todo-app.core&quot;} {:command &quot;(defn remove-item\n  [description user]\n  (swap! todo-list remove #(= (:user %) user)))&quot;, :offset 86, :ns &quot;todo-app.core&quot;} {:command &quot;(defn remove-item\n  [description user]\n  (swap! todo-list (fn [s] (remove #(= (:user %) user) s))))&quot;, :offset 99, :ns &quot;todo-app.core&quot;} {:command &quot;(defn remove-item\n  [description user]\n  (swap! todo-list (fn [s] (remove #((and (= (:description %) description) (= (:user %) user))) s))))&quot;, :offset 140, :ns &quot;todo-app.core&quot;} {:command &quot;(defn remove-item\n  [description user]\n  (swap! todo-list (fn [s] (remove #(and (= (:description %) description) (= (:user %) user)) s))))&quot;, :offset 138, :ns &quot;todo-app.core&quot;} {:command &quot;(add-item \&quot;clean bedroom\&quot; \&quot;milos\&quot;)&quot;, :offset 34, :ns &quot;todo-app.core&quot;} {:command &quot;(add-item \&quot;make lunch\&quot; \&quot;mira\&quot;)&quot;, :offset 30, :ns &quot;todo-app.core&quot;} {:command &quot;(add-item \&quot;make lunch\&quot; \&quot;milos\&quot;)&quot;, :offset 31, :ns &quot;todo-app.core&quot;} {:command &quot;(remove-item \&quot;test\&quot; \&quot;milos\&quot;)&quot;, :offset 28, :ns &quot;todo-app.core&quot;} {:command &quot;(remove-item \&quot;make lunch\&quot; \&quot;milos\&quot;)&quot;, :offset 34, :ns &quot;todo-app.core&quot;} {:command &quot;(defn complete-task\n  [&amp;description &amp;user]\n  (swap! todo-list update-in [:finished] true ))&quot;, :offset 91, :ns &quot;todo-app.core&quot;} {:command &quot;(complete-task \&quot;dsa\&quot; \&quot;wq\&quot;)&quot;, :offset 26, :ns &quot;todo-app.core&quot;} {:command &quot;(defn complete-task\n  [&amp; description user]\n  (swap! todo-list update-in [:finished] true ))&quot;, :offset 91, :ns &quot;todo-app.core&quot;} {:command &quot;(defn complete-task\n  [&amp; [description user]]\n  (swap! todo-list update-in [:finished] true ))&quot;, :offset 93, :ns &quot;todo-app.core&quot;} {:command &quot;(complete-task)&quot;, :offset 14, :ns &quot;todo-app.core&quot;} {:command &quot;(add-item \&quot;learn english\&quot; \&quot;milos\&quot;)&quot;, :offset 34, :ns &quot;todo-app.core&quot;} {:command &quot;(count-by-user \&quot;milos\&quot; @todo-list)&quot;, :offset 34, :ns &quot;todo-app.core&quot;} {:command &quot;(complete-task \&quot;learn english\&quot; \&quot;milos\&quot;)&quot;, :offset 39, :ns &quot;todo-app.core&quot;} {:command &quot;(defn complete-task\n  [description user]\n  (swap! todo-list update-in [:finished] true ))&quot;, :offset 89, :ns &quot;todo-app.core&quot;} {:command &quot;(defn find-task-by-user-and-desc\n  \&quot;Find a task by  user and description\&quot;\n  [user desc]\n  (reduce (fn [result element]\n            (if (= user (:user element))\n              (conj result element)\n              result))\n          (empty todo-list)\n          todo-list))&quot;, :offset 268, :ns &quot;todo-app.core&quot;} {:command &quot;(defn find-task-by-user-and-desc\n  \&quot;Find a task by  user and description\&quot;\n  [user desc]\n  (reduce (fn [result element]\n            (if (and (= user (:user element) (= desc (:description element))) )\n              (conj result element)\n              result))\n          (empty todo-list)\n          todo-list))&quot;, :offset 307, :ns &quot;todo-app.core&quot;} {:command &quot;(defn find-task-by-user-and-desc\n  \&quot;Find a task by  user and description\&quot;\n  [user desc]\n  (reduce (fn [result element]\n            (if (and (= user (:user element) (= desc (:description element))) )\n              (conj result element)\n              result))\n          (empty @todo-list)\n          @todo-list))&quot;, :offset 309, :ns &quot;todo-app.core&quot;} {:command &quot;(find-task-by-user-and-desc \&quot;milos\&quot; \&quot;learning english\&quot;)&quot;, :offset 55, :ns &quot;todo-app.core&quot;} {:command &quot;(find-task-by-user-and-desc \&quot;milos\&quot; \&quot;learn english\&quot;)&quot;, :offset 52, :ns &quot;todo-app.core&quot;} {:command &quot;(defn find-task-by-user-and-desc\n  \&quot;Find a task by  user and description\&quot;\n  [user desc coll]\n  (reduce (fn [result element]\n            (if (and (= user (:user element) (= desc (:description element))) )\n              (conj result element)\n              result))\n          (empty coll)\n          coll))&quot;, :offset 302, :ns &quot;todo-app.core&quot;} {:command &quot;@todo-list&quot;, :offset 10, :ns &quot;todo-app.core&quot;} {:command &quot;(if (and (= \&quot;milos\&quot; (:user (first @todo-list)) (= \&quot;learn english\&quot; (:description (first @todo-list)))))\n  (println \&quot;contain\&quot;)\n  (println \&quot;not contain\&quot;))&quot;, :offset 151, :ns &quot;todo-app.core&quot;} {:command &quot;(if (and (= \&quot;milos\&quot; (:user (first @todo-list))) (= \&quot;learn english\&quot; (:description (first @todo-list))))\n  (println \&quot;contain\&quot;)\n  (println \&quot;not contain\&quot;))&quot;, :offset 151, :ns &quot;todo-app.core&quot;} {:command &quot;(defn find-task-by-user-and-desc\n  \&quot;Find a task by  user and description\&quot;\n  [user desc coll]\n  (reduce (fn [result element]\n            (if (and (= user (:user element)) (= desc (:description element)) )\n              (conj result element)\n              result))\n          (empty coll)\n          coll))&quot;, :offset 302, :ns &quot;todo-app.core&quot;} {:command &quot;(find-task-by-user-and-desc \&quot;milos\&quot; \&quot;learn english\&quot; todo-list)&quot;, :offset 62, :ns &quot;todo-app.core&quot;} {:command &quot;(find-task-by-user-and-desc \&quot;milos\&quot; \&quot;learn english\&quot; @todo-list)&quot;, :offset 63, :ns &quot;todo-app.core&quot;} {:command &quot;(deftest a-test\n  (testing \&quot;FIXME, I fail.\&quot;\n    (is (= 0 1))))&quot;, :offset 62, :ns &quot;todo-app.core-test&quot;} {:command &quot;(a-test)&quot;, :offset 8, :ns &quot;todo-app.core-test&quot;} {:command &quot;(defn complete-task\n  \&quot;Set a task as completed\&quot;\n  [description user]\n  (swap! todo-list update-in [:finished] true ))&quot;, :offset 117, :ns &quot;todo-app.core&quot;} {:command &quot;(add-item \&quot;fix car\&quot; \&quot;milos\&quot;)&quot;, :offset 28, :ns &quot;todo-app.core-test&quot;} {:command &quot;(find-by-user \&quot;milos\&quot;)&quot;, :offset 22, :ns &quot;todo-app.core-test&quot;} {:command &quot;(find-by-user \&quot;milos\&quot; todo-list)&quot;, :offset 32, :ns &quot;todo-app.core-test&quot;} {:command &quot;(find-by-user \&quot;milos\&quot; @todo-list)&quot;, :offset 33, :ns &quot;todo-app.core-test&quot;} {:command &quot;(defn complete-task\n  \&quot;Set a task as completed\&quot;\n  [description user]\n  (swap! todo-list update-in (:finished (find-task-by-user-and-desc description user @todo-list)) true ))&quot;, :offset 174, :ns &quot;todo-app.core&quot;} {:command &quot;()&quot;, :offset 1} {:command &quot;(add-item \&quot;clear the room\&quot; \&quot;milos\&quot;)&quot;, :offset 35, :ns &quot;todo-app.core&quot;} {:command &quot;(defn complete-task\n  \&quot;Set a task as completed\&quot;\n  [description user]\n  (swap! todo-list update-in (:finished (first (find-task-by-user-and-desc description user @todo-list))) true ))&quot;, :offset 182, :ns &quot;todo-app.core&quot;} {:command &quot;(defn complete-task\n  \&quot;Set a task as completed\&quot;\n  [description user]\n  (swap! todo-list assoc-in [1 :finished] true ))&quot;, :offset 118, :ns &quot;todo-app.core&quot;} {:command &quot;(defn complete-task\n  \&quot;Set a task as completed\&quot;\n  [description user]\n  (swap! todo-list update-in [1 :finished] true ))&quot;, :offset 119, :ns &quot;todo-app.core&quot;} {:command &quot;(defn complete-task\n  \&quot;Set a task as completed\&quot;\n  [description user]\n  (swap! todo-list assoc-in  [1 :finished] true ))&quot;, :offset 119, :ns &quot;todo-app.core&quot;} {:command &quot;(defn complete-task\n  \&quot;Set a task as completed\&quot;\n  [description user]\n  (swap! todo-list assoc-in  [1] (:finished true) ))&quot;, :offset 121, :ns &quot;todo-app.core&quot;} {:command &quot;(defn find-task-by-user-and-desc\n  \&quot;Find a task by  user and description\&quot;\n  [user desc coll]\n  (reduce (fn [result element]\n            (if (and (compare user (:user element)) (compare desc (:description element)) )\n              (conj result element)\n              result))\n          (empty coll)\n          coll))&quot;, :offset 314, :ns &quot;todo-app.core&quot;} {:command &quot;(complete-task \&quot;clear the room\&quot; \&quot;milos\&quot;)&quot;, :offset 40, :ns &quot;todo-app.core&quot;}], :remote []}}</component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
+      <setting name="replType" value="NREPL" />
+      <setting name="execution" value="LEININGEN" />
+      <module name="" />
+      <setting name="jvmArgs" value="" />
+      <setting name="parameters" value="" />
+      <setting name="workingDir" value="" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="ClojureREPL" factoryName="Remote" activateToolWindowBeforeRun="false">
+      <setting name="host" value="" />
+      <setting name="port" value="0" />
+      <setting name="replType" value="0" />
+      <module name="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="repl" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
+      <module name="todo-app" />
+      <setting name="replType" value="NREPL" />
+      <setting name="execution" value="LEININGEN" />
+      <setting name="jvmArgs" value="" />
+      <setting name="parameters" value="" />
+      <setting name="workingDir" value="$PROJECT_DIR$" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="855e192d-2155-44af-a86a-d29ded7ff944" name="Default Changelist" comment="" />
+      <created>1569070555952</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1569070555952</updated>
+      <workItem from="1569070561805" duration="4987000" />
+      <workItem from="1569242320463" duration="14000" />
+      <workItem from="1569754761977" duration="3559000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>
