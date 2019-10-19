@@ -1,0 +1,84 @@
+
+
+
+
+[{:db/id #db/id[:db.part/db]
+  :db/ident :user/name
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "User name"}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :user/email
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "User email"}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :user/birth_day
+  :db/valueType :db.type/instant
+  :db/cardinality :db.cardinality/one
+  :db/doc "User birthday"}
+
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :user/tasks
+  :db/valueType :db.type/ref
+  :db/cardinality :db.cardinality/many
+  :db/doc "User tasks"}
+
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :task/description
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "Task description"}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :task/completed
+  :db/valueType :db.type/boolean
+  :db/cardinality :db.cardinality/one
+  :db/doc "Task status"}]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

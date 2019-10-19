@@ -70,6 +70,4 @@
 ; check if file exists 
 ;(.exists (io/as-file (io/resource "test.txt")))
 
-
-
-
+(println (generate-id))
