@@ -20,7 +20,7 @@
 (defn get-all-users
   "Get all users"
   []
-  (sql/query db-spec ["SELECT * FROM  users LIMIT 2"]))
+  (sql/query db-spec ["SELECT * FROM  users"]))
 
 
 (defn create-users-table
@@ -34,8 +34,8 @@
 
 (defn insert-new-user
   "Insert new user"
-  []
-  (sql/insert! db-spec :users {:user_name "milos"}))
+  [name]
+  (sql/insert! db-spec :users {:id (generate-id) :user_name name}))
 
 (defn create-tasks-table
   "Create tasks table"

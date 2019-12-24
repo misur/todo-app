@@ -71,3 +71,21 @@
 ;(.exists (io/as-file (io/resource "test.txt")))
 
 (println (generate-id))
+
+
+
+
+(def cars {:mercedes {:c "200" :e "220"}
+           :bmv {:three "m 3 " :five "m 5"}})
+
+(-> cars :mercedes :e)
+
+
+
+
+(def cars {:mercedes {:c "200" :e "220"}
+           :bmv {:three "m 3 " :five "m 5"}})
+
+(-> :mercedes :e)
+
+(hash-map  "a"  "b")

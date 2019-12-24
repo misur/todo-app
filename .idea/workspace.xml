@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="855e192d-2155-44af-a86a-d29ded7ff944" name="Default Changelist" comment="" />
+    <list default="true" id="855e192d-2155-44af-a86a-d29ded7ff944" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__slamhound_1_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.clj" beforeDir="false" afterPath="$PROJECT_DIR$/project.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/datomic/schema.edn" beforeDir="false" afterPath="$PROJECT_DIR$/resources/datomic/schema.edn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/todo_app/core.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/todo_app/core.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/todo_app/datomic.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/todo_app/datomic.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/todo_app/core_test.clj" beforeDir="false" afterPath="$PROJECT_DIR$/test/todo_app/core_test.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app.iml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1R9Djq5R3ZEEVJmlmZYtErafFho" />
   <component name="PropertiesComponent">
@@ -74,10 +88,26 @@
       <workItem from="1569070561805" duration="4987000" />
       <workItem from="1569242320463" duration="14000" />
       <workItem from="1569754761977" duration="3559000" />
+      <workItem from="1572692586315" duration="575000" />
+      <workItem from="1572880294161" duration="599000" />
+      <workItem from="1572943461301" duration="7000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
