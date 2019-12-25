@@ -1,0 +1,3 @@
+web: java $JVM_OPTS -cp target/todo-app-0.1.0-SNAPSHOT-standalone.jar
+
+

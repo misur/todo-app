@@ -19,4 +19,5 @@
          :auto-reload? true
          :auto-refresh false}
   :profiles {:dev
-             {:main todo-app.main/-dev-main}})
+             {:main todo-app.main/-dev-main}
+             :uberjar {:aot :all}})

@@ -64,7 +64,7 @@
 ;;TODO
 
 (defn -main
-  [port-number]
+  [& port-number]
   (let [port (if (nil? port-number) 8080 port-number)]
   (println (str "Start server on port:" port))
   (jetty/run-jetty app
