@@ -81,32 +81,4 @@
 
 
 
-(defn testd
-  "test dbg"
-  []
-  (let [a 10 b 20]
-    (def c (+ a 20))
-    (println c)))
-
-
-
-(testd)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
