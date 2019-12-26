@@ -1,3 +1,3 @@
-web: lein run -m todo-app.main
+web: lein run -m todo-app.main $PORT
 
 
