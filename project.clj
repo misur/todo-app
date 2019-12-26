@@ -18,6 +18,7 @@
   :ring {:handler todo-app.main/app
          :auto-reload? true
          :auto-refresh false}
-  :profiles {:dev
+  :profiles {:production {:env {:production true}}
+             :dev
              {:main todo-app.main/-dev-main}
              :uberjar {:aot :all}})
