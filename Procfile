@@ -1,3 +1,3 @@
-web: java -cp target/todo.jar todo-app.main -m todo-app.web
+web: lein run -m todo-app.main
 
 
