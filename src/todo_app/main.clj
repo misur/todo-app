@@ -70,15 +70,5 @@
   (jetty/run-jetty app
    {:port (Integer. port)})))
 
-(defn -dev-main
-  [& port-number]
-    (let [port (if (nil? port-number) 8080 port-number)]
-  (println (str "Start server on port:" port))
-  (jetty/run-jetty
-   (logger/wrap-with-logger  app)
-   {:port (Integer. port)})))
-
-
-
 
 

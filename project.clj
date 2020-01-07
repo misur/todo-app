@@ -20,4 +20,5 @@
          :auto-refresh false}
   :uberjar-name "todo.jar"
   :aot [todo-app.main]
-  :profiles {:production {:env {:production true}}})
+  :profiles {:production {:env {:production true}}
+             :uberjar {:aot :all}})
