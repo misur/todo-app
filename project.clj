@@ -14,7 +14,7 @@
                  [ring/ring-mock "0.3.2"]
                  [ring-logger "1.0.1"]
                  [clj-time "0.15.2"]]
-  :main  todo-app.main
+  :main ^:skip-aot  todo-app.main
   :ring {:handler todo-app.main/app
          :auto-reload? true
          :auto-refresh false}
