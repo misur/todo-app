@@ -1,2 +1,2 @@
- web: java $JVM_OPTS -cp target/todo-app-standalone.jar clojure.main -m todo-app.web
+ web: java $JVM_OPTS -cp target/todo.jar clojure.main -m todo-app.web
 
