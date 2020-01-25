@@ -150,21 +150,19 @@
 
 (defn get-all-task-for-user
   "Get all tasks for user by id"
-  [id & compleded]
-  (if (nil? compleded)
+  [id & completed]
+  (if (nil? completed)
     (sql/query db-spec ["SELECT * FROM tasks WHERE user_id=?" id])
-    (sql/query db-spec [(str "SELECT * FROM tasks WHERE  user_id=" id " and completed=" compleded)])))
+    (sql/query db-spec [(str "SELECT * FROM tasks WHERE  user_id=" id " and completed=" completed)])))
 
-
-;;TODO: get all tasks with user
 
 (defn get-users-with-tasks
   "Get all users with"
-  []
+  [& completed]
   (let [users (get-all-users)]
-    (map
-     #(conj  % {:tasks (get-all-task-for-user(:id %))})
-     users)))
+    (if (nil? completed)
+      (map #(conj  % {:tasks (get-all-task-for-user(:id %))})users)
+      (map #(conj  % {:tasks (get-all-task-for-user(:id %) completed)})users))))
 
 
 

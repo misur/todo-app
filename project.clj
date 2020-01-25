@@ -13,7 +13,8 @@
                  [compojure "1.6.1"]
                  [ring/ring-mock "0.3.2"]
                  [ring-logger "1.0.1"]
-                 [clj-time "0.15.2"]]
+                 [clj-time "0.15.2"]
+                 [bouncer "1.0.1"]]
   :main ^:skip-aot  todo-app.main
   :ring {:handler todo-app.main/app
          :auto-reload? true

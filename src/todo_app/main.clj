@@ -1,9 +1,12 @@
 (ns todo-app.main
   (:gen-class)
   (:require
+   [todo-app.controller :as ctrl]
    [clojure.tools.logging :as log]
    [ring.adapter.jetty :as jetty]
-   [ring.middleware.reload :refer [wrap-reload]]
+   [ring.middleware.reload :refer [wrap-reload ]]
+   [ring.middleware.params :refer [wrap-params]]
+   [ring.middleware.keyword-params :refer [wrap-keyword-params]]
    [compojure.core :refer [defroutes GET]]
    [compojure.route :refer [not-found]]
    [todo-app.db-conn :as db]
@@ -43,20 +46,33 @@
     result))
 
 
-;;TODO: fix eror with converting timestamp to json
 (defn get-all-users
   "Get all users form DB"
   [request]
   (println "get all users")
   {:status 200
-   :body (json/write-str {:users (mapv  normalize-date (db/get-all-users))})
+   :body (json/write-str {:users (mapv  normalize-date (ctrl/get-all-users))})
    :headers {}})
+
+(defn get-user-by-id
+  "Get user by id"
+  [& id]
+  (let [user (ctrl/get-user-by-id id)]
+    (log/info user)
+    (if (or (nil? id) (nil? user))
+      {:status 404
+       :body (str "User does not exist with id: "id)
+       :headers {}}
+      {:status 200
+       :body  (json/write-str  user)
+       :headers {}})))
 
 (defroutes app
   (GET "/"  [] index-page)
   (GET "/tasks" [] get-all-tasks)
   (GET "/users" [] get-all-users)
-  (not-found "<h1>Page NOT FOUND 404</h1>"))
+  (GET "/user/:id" [id] (get-user-by-id id))
+  (not-found "<h1>Page not found 404</h1>"))
 
 
 
@@ -67,7 +83,10 @@
   [& port-number]
   (let [port (if (nil? port-number) 8080 port-number)]
   (println (str "Start server on port:" port))
-  (jetty/run-jetty app
+  (jetty/run-jetty (-> app
+                       (wrap-params)
+                       (wrap-keyword-params)
+                       (wrap-reload))
    {:port (Integer. port)})))
 
 
