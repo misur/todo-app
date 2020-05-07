@@ -17,8 +17,13 @@
   []
   (* (quot (System/currentTimeMillis) 1000) (rand-int 10000)))
 
+(defn convert-inst
+  "Convert inst to string"
+  [row]
+  (assoc row :created_at (.toString (:created_at row))))
 
-;;;;;;;;;;;;;;;;;;;; unit method ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; unit method ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defn drop-table-by-name
   "Drop a table by name"
@@ -38,7 +43,7 @@
    (let [tbl-name (if (or (nil? name) (= "" name))
                     "users"
                     name)]
-     (sql/query db-spec [(str "SELECT * FROM " tbl-name)]))
+     (sql/query db-spec [(str "SELECT * FROM " tbl-name)] {:row-fn convert-inst}))
    (catch Exception e (str "Exception: " (.getMessage e)))))
 
 (defn update-or-insert! 
@@ -53,15 +58,15 @@
 (defn get-by-id
   "Get by id from param table"
   [id table]
-  (first (sql/query db-spec [(str "SELECT * FROM " table " WHERE id=" id)])))
+  (first (sql/query db-spec [(str "SELECT * FROM " table " WHERE id=" id)] {:row-fn convert-inst})))
 
 
-;;;;;;;;;;;;;; users region ;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; users region ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defn get-all-users
   "Get all users"
   []
-  (sql/query db-spec ["SELECT * FROM  users"]))
+  (sql/query db-spec ["SELECT * FROM  users"] {:row-fn convert-inst}))
 
 
 (defn create-users-table
@@ -116,7 +121,18 @@
     (update-or-insert! db-spec :users value  ["id= ?" id]))))
 
 
-;;;;;;;;;;;;;;;;; tasks region ;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn delete-user
+  "Delete use by id"
+  [id]
+  (if (nil? id)
+    (throw (Exception. ("Id is required")))
+    (do
+
+      (sql/with-db-transaction [db-spec db-spec]
+        (sql/update! db-spec :tasks {:deleted true} ["user_id = ?" id])
+        (sql/delete! db-spec :users ["id = ?" id])))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; tasks region ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defn create-tasks-table
   "Create tasks table"
@@ -148,12 +164,24 @@
       (str "The task with id: " id " does not exist")
       (update-or-insert! db-spec :tasks value ["id = ? " id ]))))
 
+(defn delete-task
+  "Delete task by id"
+  [id]
+  (sql/update! db-spec :tasks {:deleted true} ["id = ?" id]))
+
+(defn update-task-status
+  "Update status task"
+  [id value]
+  (if-not (nil? value)
+    (sql/update! db-spec :tasks {:completed value} ["id = ?" id])))
+
+
 (defn get-all-task-for-user
   "Get all tasks for user by id"
   [id & completed]
   (if (nil? completed)
-    (sql/query db-spec ["SELECT * FROM tasks WHERE user_id=?" id])
-    (sql/query db-spec [(str "SELECT * FROM tasks WHERE  user_id=" id " and completed=" completed)])))
+    (sql/query db-spec ["SELECT * FROM tasks WHERE user_id=?" id] {:row-fn convert-inst})
+    (sql/query db-spec [(str "SELECT * FROM tasks WHERE  user_id=" id " and completed=" completed)] {:row-fn convert-inst})))
 
 
 (defn get-users-with-tasks
